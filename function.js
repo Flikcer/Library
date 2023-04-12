@@ -49,6 +49,12 @@ function displayBooks() {
 addBookForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  // Check if all fields are filled out
+  if (!titleInput.value || !authorInput.value || !genreInput.value) {
+    alert("Please fill out all fields.");
+    return;
+  }
+
   const newBook = new Book(
     titleInput.value,
     authorInput.value,
